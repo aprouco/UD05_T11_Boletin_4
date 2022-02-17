@@ -8,10 +8,10 @@
 </head>
 <body>
     <?php 
-        $m=0;
-        for ($m=0; $m <= 16; $m++) { 
-            $result=$m + 20;
-            echo "<p>$m + 20 = $result</p>";
+        for ($m=0; $m <= 8; $m++) { 
+            $multi=$m * 20;
+            $result=320 - $multi;
+            echo "<p>$result</p>";
         }
     ?>
 </body>
