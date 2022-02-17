@@ -12,6 +12,8 @@
         while ($m <= 8) {
             $mult=$m * 20;
             $result = 320 - $mult;
+            echo "<p>$result</p>";
+            $m = $m + 1;
         }
     ?>
 </body>
