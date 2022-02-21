@@ -7,22 +7,50 @@
     <title>ejercicio7</title>
 </head>
 <body>
-    <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
-    <input type="hidden" name="intentos" value="
-        <?php 
-            if (!isset($_POST['intentos'])){
-            echo "0";
-            }else{
-                echo intval($_POST['intentos'])+1;
-            } 
-        ?>">
-    <label for="combinacion">Combinación</label>
-    <input type="number" name="combinacion"><br>
-    <input type="submit" name="Enviar">
+    
     <?php 
         $combinacionSecreta = "1111";
 
-        if (isset($_POST['intentos']) && intval($_POST['intentos']< 4)) {
+        if (!isset($_POST['intentos']){
+
+            ?>
+
+            <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
+            <input type="hidden" name="intentos" value="
+            <?php 
+                if (!isset($_POST['intentos'])){
+                    echo "0";
+                }else{
+                    echo intval($_POST['intentos'])+1;
+                } 
+            ?>">
+            <lab for="combinacion">Combinación</lab>
+            <input type="number" name="combinacion"><br>
+            <input type="submit" name="Enviar">
+            </form>
+            <?php
+
+                }
+
+                if (isset($_POST['intentos']) && intval($_POST['intentos']< 4)) {
+
+            ?>
+
+            <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
+            <input type="hidden" name="intentos" value="
+            <?php 
+                if (!isset($_POST['intentos'])){
+                    echo "0";
+                }else{
+                    echo intval($_POST['intentos'])+1;
+                } 
+            ?>">
+            <lab for="combinacion">Combinación</lab>
+            <input type="number" name="combinacion"><br>
+            <input type="submit" name="Enviar">
+            </form>
+
+            <?php
             
             if (isset($_POST['combinacion']) && filter_var($_POST['combinacion'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/[0-9]{4}/")))) {
                 if ($_POST['combinacion']==$combinacionSecreta) {
@@ -38,7 +66,5 @@
         }
 
     ?>
-    </form>
-
 </body>
 </html>
