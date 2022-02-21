@@ -14,7 +14,7 @@
     <?php 
         $combinacionSecreta = "1111";
 
-        if (isset($_POST['combinacion']) && filter_var($_POST('combinacion'), FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/[0-9]{4}/")))) {
+        if (isset($_POST['combinacion']) && filter_var($_POST['combinacion'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/[0-9]{4}/")))) {
             if ($_POST['combinacion']==$combinacionSecreta) {
                 echo "<p>La caja fuerte se ha abierto satisfactoriamente</p>";
             }else{
