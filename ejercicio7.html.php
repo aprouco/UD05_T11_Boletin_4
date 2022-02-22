@@ -7,7 +7,6 @@
     <title>ejercicio7</title>
 </head>
 <body>
-    <!--##########No funciona##########-->
     <?php 
         $combinacionSecreta = "1111";
 
