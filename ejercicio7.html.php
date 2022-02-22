@@ -11,7 +11,7 @@
     <?php 
         $combinacionSecreta = "1111";
 
-        if (!isset($_POST['intentos']){
+        if (!isset($_POST['intentos'])){
 
             ?>
 
