@@ -12,7 +12,7 @@
         <input type="submit" name="Enviar">
     </form>
     <?php 
-        $num=$_POST['num'];
+        $num=isset($_POST["num"]);
         for ($i=1; $i < 11 ; $i++) { 
             $mult = $i * $num;
     ?> 
