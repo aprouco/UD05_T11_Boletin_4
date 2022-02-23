@@ -36,7 +36,6 @@
                                         echo $num. "*" .$i; 
                                     ?>
                                 </td>
-                                <td>noooooooo</td>
                             </tr>
                             <tr>
                                 <td>
@@ -44,7 +43,6 @@
                                         echo $num. "*" .$i; 
                                     ?>
                                 </td>
-                                <td>noooooooo</td>
                             </tr>
                     </table>
                 </p>
