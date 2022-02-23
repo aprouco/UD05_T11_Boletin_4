@@ -15,39 +15,41 @@
         $num=$_POST['num'];
         for ($i=1; $i < 11 ; $i++) { 
             $mult = $i * $num;
-            ?> 
-                <table border="1">
-                        <tr>
-                            <td>
-                                <?php
-                                    echo $num. "*" .$i; 
-                                ?>
-                            </td>
-                            <td>
-                                <?php
-                                    echo $mult;
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?php
-                                    echo $num. "*" .$i; 
-                                ?>
-                            </td>
-                            <td>noooooooo</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?php
-                                    echo $num. "*" .$i; 
-                                ?>
-                            </td>
-                            <td>noooooooo</td>
-                        </tr>
-                </table>
-                    <?php 
+    ?> 
+                <p>
+                    <table border="1">
+                            <tr>
+                                <td>
+                                    <?php
+                                        echo $num. "*" .$i; 
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        echo $mult;
+                                    ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <?php
+                                        echo $num. "*" .$i; 
+                                    ?>
+                                </td>
+                                <td>noooooooo</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <?php
+                                        echo $num. "*" .$i; 
+                                    ?>
+                                </td>
+                                <td>noooooooo</td>
+                            </tr>
+                    </table>
+                </p>
+    <?php 
         }
-        ?>
+    ?>
 </body>
 </html>
