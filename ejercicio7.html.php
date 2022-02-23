@@ -29,7 +29,7 @@
             </form>
             <?php
 
-                }
+        }
 
                 if (isset($_POST['intentos']) && intval($_POST['intentos']< 5)) {
 
