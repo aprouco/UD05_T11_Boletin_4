@@ -46,7 +46,8 @@
                             <td>noooooooo</td>
                         </tr>
                 </table>
-                    <?php ?>
+                    <?php 
         }
+        ?>
 </body>
 </html>
