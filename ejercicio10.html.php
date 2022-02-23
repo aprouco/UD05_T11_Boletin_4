@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +11,29 @@
     <title>Ejercicio10</title>
 </head>
 <body>
-    <form action="action="<?php echo $_SERVER ['PHP_SELF'];?> method="POST">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
     
         <label for="numero">Introduce un número: </label>
         <p><input type="number" name="numero"></p>
         <input type="submit" value="Enviar">
     </form>
     <?php 
-        if (isset($_POST['numero']) && filter_var($_POST['numero'],FILTER_VALIDATE_INT)) {
-            # code...
+        if(!isset($_SESSION['numeros'])){
+            $_SESSION['numeros'] = array();
+        }
+        if (isset($_POST['numero']) && filter_var($_POST['numero'],FILTER_VALIDATE_INT) && $_POST['numero'] >= 0) {
+            $n = $_POST['numero'];
+            array_push($_SESSION['numeros'],$n);
+        }elseif (isset($_POST['numero']) && filter_var($_POST['numero'],FILTER_VALIDATE_INT) && $_POST['numero'] < 0) {
+            $suma=0;
+            $divisor=count($_SESSION['numeros']);
+            for ($i=0; $i < $divisor; $i++) { 
+                $suma = $suma + $_SESSION['numeros'][$i];
+            }
+            $media = $suma / $divisor;
+            echo "La media es = ".$media;
+        }else {
+            echo "<p>Introduce un número.</p>";
         }
     ?>
 </body>
