@@ -11,9 +11,7 @@
         $combinacionSecreta = "1111";
 
         if (!isset($_POST['intentos'])){
-
             ?>
-
             <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
             <input type="hidden" name="intentos" value="
             <?php 
@@ -28,13 +26,10 @@
             <input type="submit" name="Enviar">
             </form>
             <?php
-
         }
 
-                if (isset($_POST['intentos']) && intval($_POST['intentos']< 5)) {
-
+        if (isset($_POST['intentos']) && intval($_POST['intentos']< 5)) {
             ?>
-
             <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
             <input type="hidden" name="intentos" value="
             <?php 
