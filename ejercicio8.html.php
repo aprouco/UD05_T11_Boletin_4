@@ -16,36 +16,22 @@
         for ($i=1; $i < 11 ; $i++) { 
             $mult = $i * $num;
     ?> 
-                <p>
-                    <table border="1">
-                            <tr>
-                                <td>
-                                    <?php
-                                        echo $num. "*" .$i; 
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                        echo $mult;
-                                    ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <?php
-                                        echo $num. "*" .$i; 
-                                    ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <?php
-                                        echo $num. "*" .$i; 
-                                    ?>
-                                </td>
-                            </tr>
-                    </table>
-                </p>
+        <p>
+        <table border="1">
+            <tr>
+                <td>
+                    <?php 
+                        echo $i." * ".$num;
+                    ?>
+                </td>
+                <td>
+                    <?php 
+                        echo $mult;
+                    ?>
+                </td>
+            </tr>
+        </table>
+    </p>
     <?php 
         }
     ?>
