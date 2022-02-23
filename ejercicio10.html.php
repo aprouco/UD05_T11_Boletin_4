@@ -9,9 +9,14 @@
 <body>
     <form action="action="<?php echo $_SERVER ['PHP_SELF'];?> method="POST">
     
-        <p>Introduce un número: <input type="number" name="num"></p>
+        <label for="numero">Introduce un número: </label>
+        <p><input type="number" name="numero"></p>
         <input type="submit" value="Enviar">
-    
     </form>
+    <?php 
+        if (isset($_POST['numero']) && filter_var($_POST['numero'],FILTER_VALIDATE_INT)) {
+            # code...
+        }
+    ?>
 </body>
 </html>
