@@ -16,7 +16,6 @@
         $num=$_POST['num'];
         if (isset($_POST['num']) && filter_var($num,FILTER_VALIDATE_INT) && $num >= 0) {
     ?>
-            <p>
                 <table border="1">
                     <tr>
                         <th><b>Valor</b></th>
@@ -38,7 +37,6 @@
         }
                     ?>
                 </table>
-            </p>
     </form>
 </body>
 </html>
