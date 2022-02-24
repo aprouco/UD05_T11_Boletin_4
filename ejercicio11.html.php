@@ -12,22 +12,24 @@
     <input type="submit" value="Enviar">
 
     <?php
-        $num=isset($_POST['num']);
-        if ($num >= 0 && is_int($num)) {
-            for ($i=$num; $i < ($num + 6) ; $i++) { 
-            echo "<p>
-                        <tr>
-                            <td>
-                                ".pow($i,2)."
-                            </td>
-                            <td>
-                                ".pow($i,3)."
-                            </td>
-                        </tr>
-                  </p>";
-            }
-        }
+        $num=$_POST['num'];
+        if (isset($_POST['num']) && filter_var($num,FILTER_VALIDATE_INT) && $num >= 0) {
     ?>
+            <table>
+                <?php
+                    for ($i=$num; $i < ($num + 6) ; $i++) { 
+                        echo "<tr>
+                                    <td>
+                                        ".pow($i,2)."
+                                    </td>
+                                    <td>
+                                        ".pow($i,3)."
+                                    </td>
+                                </tr>";
+                    }
+        }
+                ?>
+            </table>
     </form>
 </body>
 </html>
