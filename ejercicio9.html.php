@@ -14,11 +14,14 @@
 
     </form>
     <?php 
-
+        error_reporting(E_ERROR);
         $num = $_POST['num'];
-        $longnumero = strlen($num);
-        echo $longnumero;
-
+        if(isset($_POST['num'])){
+            $longnumero = strlen($num);
+            echo $longnumero;
+        }else{
+            echo "<p>Introduce un número</p>";
+        }
     ?>
 </body>
 </html>
