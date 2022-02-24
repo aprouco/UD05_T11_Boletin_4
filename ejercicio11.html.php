@@ -16,21 +16,29 @@
         $num=$_POST['num'];
         if (isset($_POST['num']) && filter_var($num,FILTER_VALIDATE_INT) && $num >= 0) {
     ?>
-            <table>
-                <?php
-                    for ($i=$num; $i < ($num + 6) ; $i++) { 
-                        echo "<tr>
-                                    <td>
-                                        ".pow($i,2)."
-                                    </td>
-                                    <td>
-                                        ".pow($i,3)."
-                                    </td>
-                                </tr>";
-                    }
+            <p>
+                <table border="1">
+                    <tr>
+                        <th><b>Valor</b></th>
+                        <th><b>Cuadrado</b></th>
+                        <th><b>Cubo</b></th>
+                    </tr>
+                    <?php
+                        for ($i=$num + 1 ; $i < ($num + 6) ; $i++) { 
+                            echo    "<tr>
+                                        <td>".$i."</td>
+                                        <td>
+                                            ".pow($i,2)."
+                                        </td>
+                                        <td>
+                                            ".pow($i,3)."
+                                        </td>
+                                    </tr>";
+                        }
         }
-                ?>
-            </table>
+                    ?>
+                </table>
+            </p>
     </form>
 </body>
 </html>
