@@ -11,29 +11,28 @@
         <p>Introduce un número: <input type="text" name="num"></p>
         <input type="submit" name="Enviar">
     </form>
-    <?php 
-        $num=isset($_POST["num"]);
-        for ($i=1; $i < 11 ; $i++) { 
-            $mult = $i * $num;
-    ?> 
-        <p>
+    <?php
+        error_reporting(E_ERROR); 
+        $num=$_POST["num"];
+    ?>
+    <p>
         <table border="1">
             <tr>
-                <td>
-                    <?php 
-                        echo $i." * ".$num;
-                    ?>
-                </td>
-                <td>
-                    <?php 
-                        echo $mult;
-                    ?>
-                </td>
+                <th><b>Multiplicación</b></th>
+                <th><b>Resultado</b></th>
             </tr>
+            <?php
+                for ($i=1; $i < 11 ; $i++) { 
+                $mult = $i * $num;
+                echo "<tr>
+                <td>".$num." * ".$i."</td>
+                <td>".$mult."</td>
+                </tr>";
+            ?>
+            <?php 
+                }
+            ?>
         </table>
     </p>
-    <?php 
-        }
-    ?>
 </body>
 </html>
