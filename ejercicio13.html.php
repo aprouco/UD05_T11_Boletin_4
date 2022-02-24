@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +15,18 @@
     <p>Introduce un número: <input type="number" name="num"></p>
     </form>
     <?php 
-        $num = $_POST['num'];
-        $tiponum = array('num1' => $num[0],
-                         'num2' => $num[1],
-                         'num3' => $num[2],
-                         'num4' => $num[3],
-                         'num5' => $num[4],
-                         'num6' => $num[5],
-                         'num7' => $num[6],
-                         'num8' => $num[7],
-                         'num9' => $num[8],
-                         'num10' => $num[9]);
-        for ($i=$tiponum[0]; $i <= $tiponum[9] ; $i++) { 
-            
+        if(!isset($_SESSION['pos']) && !isset($_SESSION['neg'])){
+            $_SESSION['pos']=0;
+            $_SESSION['neg']=0;            
         }
+
+        if($_POST['num'] < 0){
+            $_SESSION['neg']=$_SESSION['neg']+1;
+        }else if ($_POST['num'] >= 0) {
+            $_SESSION['pos']=$_SESSION['pos']+1;
+        }
+        echo "<p>Los números positivos son = <b>".$_SESSION['pos']."</b></p>";
+        echo "<p>Los números negativos son = <b>".$_SESSION['neg']."</b></p>";
     ?>
 </body>
 </html>
