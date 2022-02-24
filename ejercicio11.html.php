@@ -18,7 +18,7 @@
     ?>
                 <table border="1">
                     <tr>
-                        <th><b>Valor</b></th>
+                        <th><b>Número</b></th>
                         <th><b>Cuadrado</b></th>
                         <th><b>Cubo</b></th>
                     </tr>
