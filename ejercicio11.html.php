@@ -12,6 +12,7 @@
     <input type="submit" value="Enviar">
 
     <?php
+        error_reporting(E_ERROR);
         $num=$_POST['num'];
         if (isset($_POST['num']) && filter_var($num,FILTER_VALIDATE_INT) && $num >= 0) {
     ?>
