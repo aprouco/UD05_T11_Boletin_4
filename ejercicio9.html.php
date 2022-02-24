@@ -18,7 +18,7 @@
         $num = $_POST['num'];
         if(isset($_POST['num'])){
             $longnumero = strlen($num);
-            echo "La cantidad de dígitos del número son = <b>".$longnumero."</b>";
+            echo "<p>La cantidad de dígitos del número son = <b>".$longnumero."</b></p>";
         }else{
             echo "<p>Introduce un número</p>";
         }
