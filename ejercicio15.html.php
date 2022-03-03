@@ -13,14 +13,13 @@
         <p><input type="submit" value="Enviar"></p>
     </form>
     <?php
-        ###############--------NO VA--------###############
         error_reporting(E_ERROR);
         $base=$_POST['base'];
         $exp=$_POST['exp'];
         if (!filter_var($_POST['base'],FILTER_VALIDATE_INT) || !filter_var($_POST['exp'],FILTER_VALIDATE_INT)) {
             echo "Debes introducir ambos valores";
         }else{
-            for ($i=1; $i <= $exp ; $i++) { 
+            for ($i=0; $i <= $exp ; $i++) { 
                 ?>
                 <table border="1">
                     <tr>
@@ -35,7 +34,7 @@
                         </td>
                         <td>
                             <?php
-                            echo pow($base, $exp);
+                            echo pow($base, $i);
                             ?>
                         </td>
                     </tr>
