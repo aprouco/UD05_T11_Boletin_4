@@ -24,8 +24,8 @@
                 ?>
                 <table border="1">
                     <tr>
-                        <th><b>Potencias</b></th>
-                        <th><b>Resultados</b></th>
+                        <th><b>Potencia</b></th>
+                        <th><b>Resultado</b></th>
                     </tr>
                     <tr>
                         <td>
