@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-    <p>Introduce un número: <input type="number" name="num"></p>
+    <p>Introduce un número: <input type="number" name="num" autofocus></p>
     <p><input type="submit" value="Enviar"></p>
     </form>
     <?php 
