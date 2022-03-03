@@ -23,7 +23,7 @@ session_start();
         }
 
         if($_SESSION['neg']+$_SESSION['pos'] < 10){
-            if(intval($_POST['num']) < 0){
+            if(filter_var(($_POST['num']),FILTER_VALIDATE_INT) < 0){
                 $_SESSION['neg']=$_SESSION['neg']+1;
             }else {
                 $_SESSION['pos']=$_SESSION['pos']+1;
