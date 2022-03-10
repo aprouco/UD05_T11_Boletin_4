@@ -22,19 +22,20 @@
                 if ((isset($_POST['num1']) && filter_var($_POST['num1'],FILTER_VALIDATE_INT) && $num1 > 0) && (isset($_POST['num2']) && filter_var($_POST['num2'],FILTER_VALIDATE_INT) && $num2 > 0)) {
                     $min=min($num1,$num2);
                     $max=max($num1,$num2);
-                    for ($i=$min; $i <=$max ; $i+=7) { 
-                        ?><br>
-                            <?php 
-                                echo $i;
-                            ?>
-                        <?php
+                    if ($min == $max) {
+                        echo "Os número deben ser distintos";
+                    }else {
+                        for ($i=$min; $i <=$max ; $i+=7) { 
+                            ?><br>
+                                <?php 
+                                    echo $i;
+                                ?>
+                            <?php
+                        }
                     }
-
                 }
-
             ?>
         </p>
-
     </form>
 </body>
 </html>
