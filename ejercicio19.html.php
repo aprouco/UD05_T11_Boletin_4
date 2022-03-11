@@ -20,7 +20,12 @@
         </select>   
 
         <?php
-            #####Pirámide#####
+            for ($i=1; $i <=9 ; $i++) { 
+                for ($y=1; $y <= $i ; $y++) { 
+                    echo "*";
+                }
+                echo "<br/>";
+            }
         ?>
 
     </form>
