@@ -71,6 +71,7 @@
                     if ($caracter==0 || $linea==$caracter || $linea==$a) {
                         echo "<img src='img/$icono' height='24px'>";
                     }else{
+                        ###Deja la pirámide hueca simétrica###
                         echo "<span style='display: inline-block; height: 24px; width: 24px;'></span>";
                     }
                 }
