@@ -21,9 +21,11 @@
                 echo "<p>* $errores[$i]</p>";
             }
         }else{
-
+            pintarPiramide($altura, $icono);
         }
 
+
+        ######Declaración de funciones######
         function validarFormulario($a,$i){
             $errores=array();
             if ($a == '') {
@@ -40,7 +42,7 @@
             
             return $errores;
         }
-    
+
         function pintarFormulario(){
             
             ?>
@@ -59,6 +61,14 @@
                 </form>
                     
             <?php
+        }
+
+        function pintarPiramide($a, $i){
+            $linea="";
+            for ($indice=0; $indice < $a; $indice++) { 
+                $indice=$indice."<img src='img/$i' height='24px'";
+                echo $indice."<br>";
+            }
         }
     
     ?>
