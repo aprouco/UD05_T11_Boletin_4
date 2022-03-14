@@ -9,7 +9,6 @@
 <body>
 
     <?php
-
         $altura=$_POST['altura'];
         $icono=$_POST['icono'];
 
@@ -50,7 +49,7 @@
                 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                     <label for="altura">Altura da pirámide: </label>
                     <input type="number" name="altura">
-                    <select name="select">
+                    <select name="icono">
                         <option value="instagram.jfif">Instagram</option>
                         <option value="skype.jfif">Skype</option>
                         <option value="nintendo.jfif">Nintendo</option>
@@ -66,8 +65,8 @@
         function pintarPiramide($a, $i){
             $linea="";
             for ($indice=0; $indice < $a; $indice++) { 
-                $indice=$indice."<img src='img/$i' height='24px'>";
-                echo $indice."<br>";
+                $linea=$linea."<img src='img/$i' height='24px'>";
+                echo $linea."<br>";
             }
         }
     
