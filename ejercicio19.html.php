@@ -7,28 +7,71 @@
     <title>Ejercicio19</title>
 </head>
 <body>
-    
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 
-        <p>Introduce el valor de la altura: <input type="text" name="altura"></p>
-        <label for="figuras">Selecciona las figuras con las que se creará la pirámide: </label>
-        <select name="select">
-            <option value="ladrillo">Ladrillo</option>
-            <option value="bolas">Bolas</option>
-            <option value="triangulo">Triángulo</option>
-            <option value="asteriscos" selected>Asteriscos</option>
-        </select>   
+    <?php
+        $altura=$_POST['altura'];
+        $icono=$_POST['icono'];
 
-        <?php
-            for ($i=1; $i <=9 ; $i++) { 
-                for ($y=1; $y <= $i ; $y++) { 
-                    echo "*";
-                }
-                echo "<br/>";
+        $errores = validarFormulario($altura, $icono);
+
+        if (count($errores) > 0) {
+            pintarFormulario();
+            for ($i=0; $i < count($errores); $i++) { 
+                echo "<p>* $errores[$i]</p>";
             }
-        ?>
+        }else{
+            pintarPiramide($altura, $icono);
+        }
 
-    </form>
+
+        ######Declaración de funciones######
+        function validarFormulario($a,$i){
+            $errores=array();
+            if ($a == '') {
+                array_push($errores, "Tes que indicar a altura");
+            }
+
+            if (filter_var($a, FILTER_VALIDATE_INT) && $a < 0) {
+                array_push($errores, "A altura ten que ser un valor positivo");
+            }
+
+            if ($i == '') {
+                array_push($errores, "Tes que escoller unha imaxe.");
+            }
+            
+            return $errores;
+        }
+
+        function pintarFormulario(){
+            
+            ?>
+           
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                    <label for="altura">Altura da pirámide: </label>
+                    <input type="number" name="altura">
+                    <select name="icono">
+                        <option value="instagram.jfif">Instagram</option>
+                        <option value="skype.jfif">Skype</option>
+                        <option value="nintendo.jfif">Nintendo</option>
+                        <option value="google.jfif">Google</option>
+                        <option value="@.jfif">@</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+                </form>
+                    
+            <?php
+        }
+
+        function pintarPiramide($a, $i){
+            $linea="";
+            for ($indice=0; $indice < $a; $indice++) { 
+                $linea=$linea."<img src='img/$i' height='24px'>";
+                echo $linea."<br>";
+            }
+        }
+    
+    ?>
+
 
 </body>
 </html>
