@@ -66,7 +66,7 @@
         function pintarPiramide($a, $i){
             $linea="";
             for ($indice=0; $indice < $a; $indice++) { 
-                $indice=$indice."<img src='img/$i' height='24px'";
+                $indice=$indice."<img src='img/$i' height='24px'>";
                 echo $indice."<br>";
             }
         }
