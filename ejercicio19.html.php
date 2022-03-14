@@ -9,6 +9,7 @@
 <body>
 
     <?php
+        error_reporting(E_ERROR);
         $altura=$_POST['altura'];
         $icono=$_POST['icono'];
 
@@ -20,9 +21,10 @@
                 echo "<p>* $errores[$i]</p>";
             }
         }else{
+            pintarFormulario($a, $i);
+            ?> <br> <?php
             pintarPiramide($altura, $icono);
         }
-
 
         ######Declaración de funciones######
         function validarFormulario($a,$i){
